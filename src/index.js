@@ -24,7 +24,7 @@ class Param extends Component {
 
   render() {
     return (
-        <div className="mb-3">
+        <div className="mb-3" style={{display: 'grid', gap: '20px'}} >
           <label htmlFor="id" className="form-label" >ID</label>
         <input type="number" className="form-control"  placeholder="any number" name="id" value={this.state.id} onChange={this.onIdChange} />
           <label htmlFor="param" className="form-label">Param</label>
@@ -68,7 +68,7 @@ class ParamValue extends Component {
 
   render() {
     return (
-        <div className="mb-3">
+        <div className="mb-3" style={{display: 'flex', gap: '10px'}}>
           <label htmlFor="paramValue" className="form-label" >ParamValue</label>
         <input type="text"  className="form-control" placeholder="paramValue" name="paramValue" onChange={this.onParamValueChange} value={this.state.paramValue}/>
         <button onClick={this.handleClick}  className="btn btn-outline-success mt-3">add Params</button>
@@ -134,7 +134,7 @@ class ParamEditor extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container" style={{display: "grid", maxWidth: '500px', justifyContent: 'center', gap: '50px', padding: '100px'}} >
         <Param addParam={this.addParam} addParamValues={this.addParamValues} />
         <button className="btn btn-outline-warning" onClick={this.handleModel}>Get Model</button>
         {this.state.getModel ? this.props.render(this.state.paramValue) : null}
